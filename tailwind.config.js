@@ -12,6 +12,10 @@ export default {
       backgroundImage: {
         "hero-mobile": "url('/bg-intro-mobile.png')",
       },
+      dropShadow: {
+        black: "3px 11px 1px rgba(0, 0, 0, 0.25)",
+        subtle: "3px 5px 1px rgba(0, 0, 0, 0.15)",
+      },
     },
     screens: {
       sm: "480px",

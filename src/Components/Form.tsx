@@ -9,7 +9,7 @@ function Form() {
   })
   return (
     <div className="flex flex-col gap-5">
-      <button className="bg-violet rounded-lg text-white py-4 md:py-3 flex-center">
+      <button className="bg-violet drop-shadow-black  rounded-lg text-white py-4 md:py-3 flex-center">
         <p className="text-center max-w-[20ch] md:max-w-auto">
           <strong>Try it free 7 days</strong> then $20/mo thereafter
         </p>
@@ -40,12 +40,12 @@ function Form() {
         />
         <button
           type="submit"
-          className="text-white uppercase py-3 rounded-lg bg-green flex-center tet-2xl font-bold"
+          className="text-white drop-shadow-subtle uppercase py-3 rounded-lg bg-green hover:bg-green/70 flex-center tet-2xl font-bold duration-150 ease-in-out"
         >
           claim your free trial
         </button>
 
-        <p className="text-gray-300 text-center text-sm max-w-[40ch] mx-auto term:max-w-max">
+        <p className="text-gray-300 text-center text-sm max-w-[40ch] mx-auto term:max-w-max ">
           By clicking the button, you are agreeing to our
           <span className="text-pink font-semibold "> Terms and Services</span>
         </p>
