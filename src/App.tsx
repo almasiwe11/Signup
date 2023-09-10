@@ -1,9 +1,13 @@
-import Hero from "./Components/Hero/Hero"
+import Cta from "./Components/Cta"
+import Form from "./Components/Form"
 
 function App() {
   return (
-    <div className="text-blue-400 text-4xl font-bold">
-      <Hero />
+    <div className="py-16 bg-hero-mobile bg-pink">
+      <div className="wrapper flex-flex gap-8">
+        <Cta />
+        <Form />
+      </div>
     </div>
   )
 }
