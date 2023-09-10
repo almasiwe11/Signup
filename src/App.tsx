@@ -3,8 +3,8 @@ import Form from "./Components/Form"
 
 function App() {
   return (
-    <div className="py-16 bg-hero-mobile bg-pink">
-      <div className="wrapper flex-flex gap-8">
+    <div className="py-16 bg-hero-mobile bg-pink lg:h-screen lg:flex-center">
+      <div className="wrapper  flex flex-col md:grid md:grid-cols-2 gap-8">
         <Cta />
         <Form />
       </div>

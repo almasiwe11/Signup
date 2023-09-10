@@ -13,8 +13,9 @@ function Input({ formik, name, placeholder, type }: PropTypes) {
     return formik.errors[input] && formik.touched[input]
   }
 
-  const inputStyle =
-    " border-2 w-full border-gray-200 placeholder:font-semibold rounded-lg p-2.5 outline-none focus:ring-violet focus:border-violet"
+  const inputStyle = `${
+    hasError(name) ? "border-pink" : ""
+  } border-2 w-full border-gray-200 placeholder:font-semibold rounded-lg p-2.5 outline-none focus:ring-violet focus:border-violet`
 
   return (
     <div className="relative">
@@ -30,7 +31,7 @@ function Input({ formik, name, placeholder, type }: PropTypes) {
       <div className=" absolute top-[50%] translate-y-[-50%] right-6 flex gap-3">
         <Error style={` ${hasError(name) ? "block" : "hidden"} `} />
       </div>
-      <div className="absolute right-0 -bottom-4.5 text-sm text-pink ">
+      <div className="absolute right-0 -bottom-4.5 md:-bottom-6 text-sm text-pink ">
         {hasError(name) ? formik.errors[name] : ""}
       </div>
     </div>

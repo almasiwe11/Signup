@@ -1,43 +1,12 @@
-import { useFormik } from "formik"
-import * as Yup from "yup"
+import { useFormikForm } from "../Hooks/useFormikForm"
 import Input from "./Input"
-import { FormTypes } from "../Types/Types"
 
 function Form() {
-  const initialValues: FormTypes = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  }
-
-  const validate = {
-    firstName: Yup.string().required("Name is required"),
-    lastName: Yup.string().required("Last Name is required"),
-    email: Yup.string()
-      .required("Email is required")
-      .email("Looks like this is not an email")
-      .test("valid-email", "Looks like this is not an email", (value) => {
-        if (!value) return false
-        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
-        return emailRegex.test(value)
-      }),
-    password: Yup.string()
-      .required("Password is required")
-      .min(6, "Password should be at least 6 characters")
-      .max(15, "Password cannot be longer that 15 charactersf"),
-  }
-
-  const formik = useFormik({
-    initialValues,
-    validationSchema: Yup.object(validate),
+  const formik = useFormikForm({
     onSubmit: () => {
-      alert("submitted")
+      alert("submittted")
     },
   })
-
-  console.log(formik.errors)
-
   return (
     <div className="flex flex-col gap-5">
       <button className="bg-violet rounded-lg text-white py-4 md:py-3 flex-center">
@@ -48,7 +17,7 @@ function Form() {
 
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-white p-4 flex flex-col gap-5 rounded-lg"
+        className="bg-white p-4 flex md:p-9 flex-col gap-5 md:gap-8 rounded-lg"
       >
         <Input
           formik={formik}
